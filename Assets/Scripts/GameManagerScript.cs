@@ -6,16 +6,23 @@ using TMPro;
 
 public class GameManagerScript : MonoBehaviour
 {
-    public TextMeshProUGUI successText;
-    public GameObject ball;
+    public GameObject portal;
     // Start is called before the first frame update
     void Start()
     {
-        successText.text = string.Empty;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+
+
     }
+
+    private void FixedUpdate()
+    {
+
+    }
+
 }

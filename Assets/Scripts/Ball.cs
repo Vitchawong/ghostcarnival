@@ -6,6 +6,7 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     public TextMeshProUGUI successText;
+    public ParticleSystem particleEffect;
     private Vector3 iniPos = new Vector3(3.737f, 12.8506f, -6.51f);
     // Start is called before the first frame update
     void Start()
@@ -34,6 +35,7 @@ public class Ball : MonoBehaviour
         if (collision.gameObject.tag == "Cup")
         {
             successText.text = "Success!";
+            particleEffect.Play();
         }
     }
 }
