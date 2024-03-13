@@ -24,6 +24,7 @@ public class ButtonVR : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.gameObject.tag);
         if (isPressed == false)
         {
             button.transform.localPosition = new Vector3(0.31f, -0.011f, -18.79f);
