@@ -1,4 +1,0 @@
-#Sun Mar 10 22:18:56 ICT 2024
-base.0=C\:\\Users\\ChissanuPC\\Desktop\\Unity Projects\\ghostcarnival\\Library\\Bee\\Android\\Prj\\IL2CPP\\Gradle\\launcher\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
-renamed.0=classes.dex
-path.0=classes.dex
