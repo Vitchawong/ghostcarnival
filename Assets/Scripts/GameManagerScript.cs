@@ -25,7 +25,7 @@ public class GameManagerScript : MonoBehaviour
         if ((player.transform.position - pos).magnitude < 3)
         {
             Debug.Log("here");
-            xr.transform.position = new Vector3(-8.02f, 2.631f, -49.96f);
+            xr.transform.position = new Vector3(0f, 2f, -46.5f);
             bgSound.Stop();
             //player.transform.position = new Vector3(18.8f, 0.505f, 60.424f);
         }
