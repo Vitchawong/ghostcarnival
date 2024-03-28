@@ -2,50 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-
+using UnityEngine.XR.Interaction.Toolkit;
 public class ButtonVR : MonoBehaviour
 {
-    public GameObject button;
-    public UnityEvent onPress;
-    public UnityEvent onRelease;
-    GameObject presser;
-    bool isPressed;
-    // Start is called before the first frame update
+    public Transform visualTarget;
+
+    private Vector3 offset;
+    private Transform pokeAttackTransform;
+
+
+    private XRBaseInteractable interactable;
+    private bool isFollowing = false;
     void Start()
     {
-        isPressed = false;
+        interactable = GetComponent<XRBaseInteractable>();
+        interactable.hoverEntered.AddListener(Follow);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log(other.gameObject.tag);
-        if (isPressed == false)
+        if (isFollowing)
         {
-            button.transform.localPosition = new Vector3(0.31f, -0.011f, -18.79f);
-            presser = other.gameObject;
-            onPress.Invoke();
-            isPressed = true;
+            visualTarget.position = pokeAttackTransform.position + offset;
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    public void Follow(BaseInteractionEventArgs hover)
     {
-        if (other == presser)
+        if (hover.interactorObject is XRPokeInteractor) 
         {
-            button.transform.localPosition = new Vector3(0.31f, 0.03f, -18.79f);
-            onRelease.Invoke();
-            isPressed = false;
+            XRPokeInteractor interactor = (XRPokeInteractor)hover.interactorObject;
+            isFollowing = true;
+            pokeAttackTransform = interactor.attachTransform;
+            offset = visualTarget.position - pokeAttackTransform.position;
         }
     }
 
-    private void Test()
-    {
-        Debug.Log("Pressed");
-    }
 }
