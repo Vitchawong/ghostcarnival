@@ -1,0 +1,26 @@
+
+newmtl plastic_base
+Ka  0.6 0.6 0.6
+Kd  0.6 0.6 0.6
+Ks  0.1 0.1 0.1
+d  1.0
+Ns  150.0
+illum 2
+map_Kd TVPlastic.sbsar
+map_Bump TVPlastic.sbsar
+
+
+
+
+newmtl metal
+Ka  0.6 0.6 0.6
+Kd  0.6 0.6 0.6
+Ks  0.1 0.1 0.1
+d  1.0
+Ns  150.0
+illum 2
+map_Kd Metal.sbsar
+map_Bump Metal.sbsar
+
+
+
