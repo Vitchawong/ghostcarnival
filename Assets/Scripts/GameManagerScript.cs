@@ -21,7 +21,7 @@ public class GameManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log((player.transform.position - pos).magnitude);
+        //Debug.Log((player.transform.position - pos).magnitude);
         if ((player.transform.position - pos).magnitude < 3)
         {
             Debug.Log("here");
