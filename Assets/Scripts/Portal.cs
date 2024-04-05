@@ -26,7 +26,7 @@ public class Portal : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            xr.transform.position = new Vector3(-1f, 2f, -42.685f);
+            xr.transform.position = new Vector3(-2f, 2f, -42.685f);
             xr.transform.rotation = Quaternion.Euler(0f, 150f, 0f);
         }
         Debug.Log(other.gameObject.tag);

@@ -12,6 +12,8 @@ public class GameManagerScript : MonoBehaviour
     public AudioSource audio;
     public TextMeshProUGUI ScoreText;
     public bool portalOpen = false;
+    public GameObject monster;
+    public GameObject exitPortal;
 
     // Sound Effect
     public AudioClip monScream;
@@ -44,6 +46,13 @@ public class GameManagerScript : MonoBehaviour
         if (count == 1)
         {
             StartCoroutine(waitForSound());
+            monster.GetComponent<Monster>().ChangeMonsterState("Hunting");
+        }
+        else if (count == 8)
+        {
+            text = "Exit Gate has been open!";
+            ScoreText.text = text;
+            exitPortal.SetActive(true);
         }
     }
 
